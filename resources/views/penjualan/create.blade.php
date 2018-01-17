@@ -30,7 +30,7 @@
 
 				<div class="form-group">
 					<label class="control-lable">Tanggal Jual</label>
-					<input type="text" name="c" class="form-control" required="">
+					<input type="date" name="c" class="form-control" required="">
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-success">Simpan</button>

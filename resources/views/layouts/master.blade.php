@@ -25,6 +25,8 @@
 
     <!-- Custom Fonts -->
     <link href="{{asset('/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap-datepicker.min.css')}}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/jquery-ui.css')}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
@@ -63,8 +65,9 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="{{ route('logout') }}"
+                    <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
@@ -73,8 +76,8 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                        </li>
-                    </ul>
+                                    </li>
+                                </ul>
                     <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->
@@ -86,21 +89,21 @@
                     <ul class="nav" id="side-menu">
                         @if (Auth::check())
                         <li>
-                            <a href="{{ url('/home')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{{ url('/home')}}"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                         </li>
                         @endif
                         @role('admin')
                         <li>
-                            <a href="{{ route('pelanggan.index')}}"><i class="fa fa-table fa-fw"></i> Pelanggan</a>
+                            <a href="{{ route('pelanggan.index')}}"><i class="fa fa-users"></i> Pelanggan</a>
                         </li>
                         <li>
-                            <a href="{{ route('penjualan.index')}}"><i class="fa fa-table fa-fw"></i> Penjualan</a>
+                            <a href="{{ route('penjualan.index')}}"><i class="fa fa-usd"></i> Penjualan</a>
                         </li>
                         <li>
-                            <a href="{{ route('buku.index')}}"><i class="fa fa-table fa-fw"></i> Buku</a>
+                            <a href="{{ route('buku.index')}}"><i class="fa fa-book"></i> Buku</a>
                         </li>
                         <li>
-                            <a href="{{ route('detailpenjualan.index')}}"><i class="fa fa-table fa-fw"></i> Detail Penjualan</a>
+                            <a href="{{ route('detailpenjualan.index')}}"><i class="fa fa-cc-mastercard"></i> Detail Penjualan</a>
                         </li>
                         @endrole
                     </ul>
@@ -130,6 +133,8 @@
 
     <!-- jQuery -->
     <script src="{{asset('/vendor/jquery/jquery.min.js')}}"></script>
+    
+    <script src="{{ asset('/js/bootstrap-datepicker.min.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -154,6 +159,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
     <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
+    <script>
+      $( function() {
+        $(".datepicker").datepicker();
+      });
+  </script>
     <script>
       $(document).ready(function() {
     $("#example").DataTable({

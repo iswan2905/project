@@ -16,6 +16,10 @@
 					<input type="text" name="a" class="form-control" required="">
 				</div>
 				<div class="form-group">
+					<label class="control-lable">No Telp</label>
+					<input type="text" name="d" class="form-control" required="">
+				</div>
+				<div class="form-group">
 					<label class="control-lable">Email</label>
 					<input type="text" name="b" class="form-control" required="">
 				</div>

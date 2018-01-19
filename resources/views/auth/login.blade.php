@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- /.navbar -->
+<!-- /.navbar -->
     <header id="head" class="secondary"></header>
 
     <!-- container -->
@@ -65,5 +65,5 @@
             <!-- /Article -->
 
         </div>
-    </div>  <!-- /container -->
+    </div>
 @endsection

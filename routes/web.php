@@ -28,3 +28,6 @@ Route::resource('detailpenjualan', 'DetailPenjualanController');
 Route::get('/Route', function () {
     return view('layouts.master');
 });
+Route::get('/register', function(){
+	return view('errors.404');
+});

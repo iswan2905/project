@@ -1,0 +1,2 @@
+webpackJsonp([3],{196:function(e,t,r){var a=r(1)(r(507),r(530),null,null,null);e.exports=a.exports},507:function(e,t,r){"use strict";throw Object.defineProperty(t,"__esModule",{value:!0}),new Error('Cannot find module "../../charts/chartjs/PieChart.vue"')},530:function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("div",{staticClass:"animated fadeIn"},[r("card",{attrs:{"header-text":"Pie Chart"}},[r("div",{staticClass:"chart-wrapper"},[r("pie-chart")],1)])],1)},staticRenderFns:[]}}});
+//# sourceMappingURL=3.build.js.map

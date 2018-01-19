@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.template')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -20,5 +20,18 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+    <div class="row mb-2">
+            <div class="col-lg-12">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5 class="card-title mb-5">Dashboard</h5>
+                  <p class="lead">
+                    Anda Berhasil Login!
+                    Selamat Datang di Halaman Dashboard Assalaam Book Store.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 @endsection

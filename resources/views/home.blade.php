@@ -34,4 +34,36 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-4">Daftar Karyawan</h5>
+                  <div class="table-responsive">
+                    <table class="table center-aligned-table">
+                      <thead>
+                        <tr class="text-primary">
+                          <th>No. </th>
+              <th>Username</th>
+              <th>Email</th>
+                        </tr>
+                      </thead>
+
+                      <?php
+                      $no = 1;
+                      ?>
+
+                      <tbody>
+                        @foreach($karyawan as $data)
+                        <tr class="">
+                          <td>{{$no++}}</td>
+            <td>{{$data->name}}</td>
+            <td>{{$data->email}}</td>
+          </tr>
+          @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
 @endsection

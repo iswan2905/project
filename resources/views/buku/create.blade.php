@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.template')
 @section('content')
 <div class="container">
-<div class="row">
+{{-- <div class="row">
 	<center><h1>Data Buku</h1></center>
 	<div class="panel panel-primary">
 		<div class="panel-heading">Data Buku
@@ -39,6 +39,37 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> --}}
+
+<div class="card-body">
+                  <h5 class="card-title mb-4">Tambah Data Buku</h5>
+                  <form action="{{route('buku.store')}}" method="POST">
+                  	{{csrf_field()}}
+                  	<div class="form-group">
+                      <label>Judul</label>
+                      <input type="text" class="form-control p-input" name="a" placeholder="Ketik Disini...">
+                    </div>
+                    <div class="form-group">
+                      <label>Penulis</label>
+                      <input type="text" class="form-control p-input" name="b" placeholder="Ketik Disini...">
+                    </div>
+                    <div class="form-group">
+                      <label>Stok</label>
+                      <input type="text" class="form-control p-input" name="c" placeholder="Ketik Disini...">
+                    </div>
+                    <div class="form-group">
+                      <label>Harga</label>
+                      <input type="text" class="form-control p-input" name="d" placeholder="Ketik Disini...">
+                    </div>
+                    <div class="form-group">
+                      <label>Cover</label>
+                      <input type="file" class="form-control p-input" name="cover" placeholder="Masukkan File">
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+                  </form>
+                </div>
 </div>
 @endsection

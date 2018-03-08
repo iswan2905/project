@@ -58,11 +58,13 @@
                     <table class="table center-aligned-table" id="example">
                       <thead>
                         <tr class="text-primary">
+                          <th>Nama Pelanggan</th>
+                          <th>Alamat</th>
                           <th>Judul</th>
 						  <th>Harga</th>
 						  <th>Jumlah</th>
 						  <th>Total Harga</th>
-						  <th>Tanggal Beli</th>
+						  <th>Tanggal Transaksi</th>
 						  <th>Edit</th>
 						  <th>Delete</th>
                         </tr>
@@ -70,7 +72,9 @@
                       <tbody>
                       	@foreach($detailpenjualan as $data)
                         <tr class="">
-                          <td>{{$data->buku->judul}}</td>
+                        <td>{{$data->nama}}</td>
+                        <td>{{$data->alamat}}</td>
+                        <td>{{$data->buku->judul}}</td>
 						<td>Rp. {{$data->buku->harga}}</td>
 						<td>{{$data->jumlah}}</td>
 						<td>Rp. {{$data->total_harga}}</td>

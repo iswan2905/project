@@ -9,10 +9,18 @@
 		<a href="{{URL::previous() }}">Kembali</a></div>
 		</div>
 		<div class="panel-body">
+			@include('layouts._flash')
 			<form action="{{route('detailpenjualan.store')}}" method="POST">
 				{{csrf_field()}}
-				
 				<div class="form-group">
+					<label class="control-lable">Nama Pelanggan</label>
+					<input type="text" name="d" class="form-control" required="">
+				</div>
+				<div class="form-group">
+                      <label>Alamat</label>
+                      <textarea class="form-control p-input" name="e" rows="5" placeholder="Ketikkan Alamat..."></textarea>
+                 </div>				
+                 <div class="form-group">
 					<label class="control-lable">Buku</label>
 					<select class="form-control" name="id_buku">
 						@foreach($buku as $data)

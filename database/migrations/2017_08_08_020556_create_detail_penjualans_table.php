@@ -15,6 +15,8 @@ class CreateDetailPenjualansTable extends Migration
     {
         Schema::create('detail_penjualans', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nama');
+            $table->text('alamat');
             $table->integer('id_buku')->unsigned();
             $table->foreign('id_buku')->references('id')->on('bukus')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('jumlah');

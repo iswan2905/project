@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.template')
 @section('content')
-<div class="container">
+{{-- <div class="container">
 <div class="row">
 	<center><h1>Data Pelanggan</h1></center>
 	<div class="panel panel-primary">
@@ -35,5 +35,31 @@
 		</div>
 	</div>
 </div>
-</div>
+</div> --}}
+<div class="card-body">
+                  <h5 class="card-title mb-4">Tambah Data Pelanggan</h5>
+                  <form action="{{route('pelanggan.store')}}" method="POST">
+                  	{{csrf_field()}}
+                  	<div class="form-group">
+                      <label>Nama Pelanggan</label>
+                      <input type="text" class="form-control p-input" name="a" placeholder="Masukkan Nama">
+                    </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="email" class="form-control p-input" name="b" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label>No. Telp</label>
+                      <input type="text" class="form-control p-input" name="d" placeholder="Ketik Nomor Telepon">
+                    </div>
+                    <div class="form-group">
+                      <label>Alamat</label>
+                      <textarea class="form-control p-input" name="c" rows="5" placeholder="Ketikkan Alamat..."></textarea>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+                  </form>
+                </div>
 @endsection

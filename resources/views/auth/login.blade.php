@@ -11,6 +11,7 @@
         <div class="row">
             
             <!-- Article main content -->
+            <h1><center>LOGIN</center></h1>
             <article class="col-xs-12 maincontent">
                 <header class="page-header">
                     <h1 class="page-title"></h1>
@@ -52,7 +53,7 @@
                                     <b><a href="{{ url('/password/reset')}}">Lupa Kata Sandi ?</a></b>
                                 </div>
                                 <div class="col-sm-4 text-right">
-                                    <button class="btn btn-action btn-xs" type="submit">Masuk</button>
+                                    <button class="btn btn-primary btn-block enter-btn" type="submit">Masuk</button>
                                 </div>
                             </div>
                             {!! Form::close() !!}      

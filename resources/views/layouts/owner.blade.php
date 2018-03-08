@@ -53,9 +53,9 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="bg-white sidebar sidebar-offcanvas" id="sidebar">
           <div class="user-info">
-            <img src="{{ asset('images/logoj.png')}}" alt="">
-            <p class="name">Staff ABS</p>
-            <p class="designation">ABS FAmily</p>
+            <img src="{{ asset('images/ahs.jpg')}}" alt="">
+            <p class="name">Karyawan</p>
+            <p class="designation"></p>
             <span class="online"></span>
             <br>
             <a class="btn btn-sm btn-primary" style="margin-left: 10px;margin-right: 10px;" href="{{ route('logout') }}"
@@ -78,39 +78,25 @@
               </a>
             </li>
             @endif
-            </li>
+            @role('')
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/pelanggan')}}">
+              <a class="nav-link" href="{{ route('pelanggan.index')}}">
                 <img src="{{ asset('images/icons/customer.png')}}" alt="">
                 <span class="menu-title">Pelanggan</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/penjualan')}}">
+              <a class="nav-link" href="{{ route('penjualan.index')}}">
                 <img src="{{ asset('images/icons/money.png')}}" alt="">
                 <span class="menu-title">Penjualan</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/buku')}}">
+              <a class="nav-link" href="{{ route('buku.index')}}">
                 <img src="{{ asset('images/icons/book.png')}}" alt="">
                 <span class="menu-title">Buku</span>
-            </a>
-          </li>
-          @role('admin')
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/detailpenjualan')}}">
-                <img src="{{ asset('images/icons/atm.png')}}" alt="">
-                <span class="menu-title">Detail Penjualan</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/Karyawan')}}">
-                <img src="{{ asset('images/icons/atm.png')}}" alt="">
-                <span class="menu-title">Karyawan</span>
-              </a>
-            </li>
-          @endrole
+            @endrole
           </ul>
         </nav>
 

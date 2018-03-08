@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\DetailPenjualan;
 use App\Buku;
 use App\Penjualann;
+use Illuminate\Support\Facades\Session;
 
 class DetailPenjualanController extends Controller
 {
@@ -45,11 +46,15 @@ class DetailPenjualanController extends Controller
         $bebas = $request->all();
         $buku = Buku::where('id', $bebas['id_buku'])->first();
         $detailpenjualan = new DetailPenjualan;
+        $detailpenjualan->nama = $request->d;
+        $detailpenjualan->alamat = $request->e;
         $detailpenjualan->id_buku = $request->id_buku;
         $detailpenjualan->jumlah = $request->c;
         $detailpenjualan->total_harga = $request->c * $buku->harga;
         $detailpenjualan->save();
         return redirect()->route('detailpenjualan.index');
+
+
     }
 
     /**

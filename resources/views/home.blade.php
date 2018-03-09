@@ -34,7 +34,8 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-12">
+          <div class="card-deck">
+          <div class="card col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-4">
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title mb-4">Daftar Karyawan</h5>
@@ -59,11 +60,31 @@
             <td>{{$data->name}}</td>
             <td>{{$data->email}}</td>
           </tr>
-          @endforeach
+            @endforeach
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="card col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-4" style="min-height:395px;">
+              <div class="card-body">
+                <h5 class="card-title mb-4">Quote</h5>
+                <div class="row d-flex align-items-center justify-items-center flex-column">
+                  <div class="text-center">
+                    <img src="{{ asset('images/foto.jpg')}}" class="rounded-circle" width="100" height="100">
+                  </div>
+                  <div class="text-center mt-3">
+                    <i class="fa fa-quote-right icon-grey-big"></i>
+                  </div>
+                  <p class="font-italic text-muted mt-3 mb-4 text-center">
+                    Be happy with being you. Love your flaws. Own your quirks. And know that you are just as perfect as anyone else, exactly as you are.
+                    <center>-Ariana Grande-</center>
+                  </p>
+                  <h5 class="text-center bolder">Iswan</h5>
+                  <h6 class="text-center text-muted">Owner</h6>
+                </div>
+              </div>
+            </div>
             </div>
 @endsection

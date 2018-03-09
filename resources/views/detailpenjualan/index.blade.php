@@ -61,9 +61,6 @@
                           <th>Nama Pelanggan</th>
                           <th>Alamat</th>
                           <th>Judul</th>
-						  <th>Harga</th>
-						  <th>Jumlah</th>
-						  <th>Total Harga</th>
 						  <th>Tanggal Transaksi</th>
 						  <th>Edit</th>
 						  <th>Delete</th>
@@ -74,10 +71,8 @@
                         <tr class="">
                         <td>{{$data->nama}}</td>
                         <td>{{$data->alamat}}</td>
-                        <td>{{$data->buku->judul}}</td>
-						<td>Rp. {{$data->buku->harga}}</td>
-						<td>{{$data->jumlah}}</td>
-						<td>Rp. {{$data->total_harga}}</td>
+                        <td>@foreach($data->buku as $key => $value)<i  class="fa fa-arrow-right"></i>{{$value}} <br>@endforeach</td>
+			{{-- 			<td>Rp. {{$data->total_harga}}</td> --}}
 						<td>{{$data->created_at}}</td>
                           <td>
 							<a class="btn btn-warning" href="{{route('detailpenjualan.edit', $data->id)}}">Edit</a>

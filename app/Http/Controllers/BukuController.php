@@ -44,14 +44,23 @@ class BukuController extends Controller
         $buku->penulis = $request->b;
         $buku->stok = $request->c;
         $buku->harga = $request->d;
-        if ($request->hasFile('cover')) {
-            $books = $request->file('cover');
-            $extension = $books->getClientOriginalExtension();
-            $filename = str_random(6). '.' .$extension;
-            $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
-            $books->move($destinationPath, $filename);
-            $buku->cover = $filename;
+        //isi field cover jika ada cover yang inngin di upload
+        if($request->hasFile('cover'))
+        {
+            //Mengambil File yang di upload
+            $uploaded_cover = $request->file('cover');
+            //mengambil extension file
+            $extension = $uploaded_cover->getClientOriginalExtension();
+            //membuat nama file random berikut extesion
+            $filename=md5(time()).'.'.$extesion;
+            //menyimpan cover ke folder public/img
+            $destinationPath = public_path().DIRECTORY_SEPARATOR.'img';
+            $uploaded_cover->move($destinationPath,$filename);
+            //mengisi fild cover di book dengan filename yang baru dibuat
+            $buku->cover=$filename;
+            $buku=save();
         }
+
         $buku->save();
         return redirect()->route('buku.index');
     }

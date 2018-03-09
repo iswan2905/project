@@ -17,9 +17,8 @@ class CreateDetailPenjualansTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->text('alamat');
-            $table->integer('id_buku')->unsigned();
-            $table->foreign('id_buku')->references('id')->on('bukus')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('jumlah');
+            $table->string('buku');
+            // $table->integer('jumlah');
             $table->integer('total_harga');
             $table->timestamps();
         });

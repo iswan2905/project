@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.template')
 @section('content')
 <div class="container">
-<div class="row">
+{{-- <div class="row">
 	<center><h1>Data Detail Penjualan</h1></center>
 	<div class="panel panel-primary">
 		<div class="panel-heading">Data Detail Penjualan
@@ -22,7 +22,7 @@
                  </div>				
                  <div class="form-group">
 					<label class="control-lable">Buku</label>
-					<select class="form-control" name="id_buku">
+					<select class="js-example-basic-multiple" name="id_buku" multiple="multiple">
 						@foreach($buku as $data)
 						<option value="{{$data->id}}">{{$data->judul}}</option>
 						@endforeach
@@ -40,6 +40,35 @@
 			</form>
 		</div>
 	</div>
+</div> --}}
+
+<div class="card-body">
+                  <h5 class="card-title mb-4">Tambah Data Detail Penjualan</h5>
+                  <form action="{{route('detailpenjualan.store')}}" method="POST">
+                  	{{csrf_field()}}
+                  	<div class="form-group">
+                      <label>Nama Pelanggan</label>
+                      <input type="text" class="form-control p-input" name="d" placeholder="Ketik Disini...">
+                    </div>
+                    <div class="form-group">
+                      <label>Alamat</label>
+                      <textarea class="form-control p-input" name="e" rows="5" placeholder="Ketikkan Alamat..."></textarea>
+                    </div>
+                    <div class="form-group">
+					<label class="control-lable">Buku</label>
+					<select class="js-example-basic-multiple form-control" name="id_buku[]" multiple="multiple">
+						@foreach($buku as $data)
+						<option value="{{$data->id}}">{{$data->judul}} - Rp.{{number_format($data->harga,'2',',','.')}}</option>
+						@endforeach
+					</select>
+					</div>
+
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+                  </form>
+                </div>
 </div>
 </div>
 @endsection

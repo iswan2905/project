@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class DetailPenjualan extends Model
 {
     //
-    protected $fillable = ['nama', 'alamat', 'id_buku', 'jumlah', 'total_harga'];
-    protected $visible = ['nama', 'alamat', 'id_buku', 'jumlah', 'total_harga'];
+    protected $fillable = ['nama', 'alamat', 'id_buku', 'jumlah', 'total_harga','buku'];
+    protected $visible = ['nama', 'alamat', 'id_buku', 'jumlah', 'total_harga','buku'];
+
+    protected $casts = [
+    	'buku' => 'array'
+    ];
     public $timestamps = true;
 
     public function buku()

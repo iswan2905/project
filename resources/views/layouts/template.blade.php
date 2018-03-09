@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{ asset('css/style.css')}}" />
   <link rel="shortcut icon" href="{{ asset('images/icon.png')}}" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
 </head>
@@ -32,14 +33,14 @@
           <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
         </form>
         <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="{{ asset('images/foto.jpg')}}" alt="">
 
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
-          </li>
+          </li> --}}
         </ul>
         <button class="navbar-toggler navbar-dark navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="navbar-toggler-icon"></span>
@@ -146,6 +147,7 @@
   <script src="{{ asset('js/misc.js')}}"></script>
   <script src="{{ asset('js/chart.js')}}"></script>
   <script src="{{ asset('js/maps.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
@@ -158,6 +160,11 @@
     $("#example").DataTable({
     });
 } );
+</script>
+<script>
+  $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
 </script>
 </body>
 

@@ -12,8 +12,8 @@ class Buku extends Model
      protected $visible = ['judul', 'penulis', 'stok', 'harga', 'cover'];
      public $timestamps = true;
 
-     public function detail_penjualan()
-    {
-    	return $this->hasMany('App\DetailPenjualan');
-    }
+    //  public function detail_penjualan()
+    // {
+    // 	return $this->hasMany('App\DetailPenjualan');
+    // }
 }

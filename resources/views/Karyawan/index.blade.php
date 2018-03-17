@@ -10,11 +10,11 @@
                     <table class="table center-aligned-table" id="example">
                       <thead>
                         <tr class="text-primary">
-                          <th>No. </th>
-						  <th>Username</th>
-						  <th>Email</th>
-						  <th>Edit</th>
-						  <th>Delete</th>
+                          <th>#</th>
+						              <th>Nama Karyawan</th>
+						              <th>Email</th>
+						              <th>Edit</th>
+						              <th>Delete</th>
                         </tr>
                       </thead>
 
@@ -26,16 +26,16 @@
                       	@foreach($karyawan as $data)
                         <tr class="">
                           <td>{{$no++}}</td>
-						<td>{{$data->name}}</td>
-						<td>{{$data->email}}</td>
+						              <td>{{$data->name}}</td>
+						              <td>{{$data->email}}</td>
                           <td>
-							<a class="btn btn-warning" href="{{route('Karyawan.edit', $data->id)}}">Edit</a>
+							<a class="btn btn-outline-warning" href="{{route('Karyawan.edit', $data->id)}}">Edit</a>
 						</td>
 						<td>
 							<form action="{{route('Karyawan.destroy', $data->id)}}" method="POST">
 								<input type="hidden" name="_method" value="DELETE">
 								<input type="hidden" name="_token">
-								<input type="submit" value="Delete" class="btn btn-danger">
+								<input type="submit" value="Delete" class="btn btn-outline-danger">
 								{{csrf_field()}}
 							</form>
 						</td>

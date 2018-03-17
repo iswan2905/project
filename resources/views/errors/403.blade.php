@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>ERROR 404</title>
+  <title>ERROR 403</title>
   <link rel="stylesheet" href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css')}}" />
   <link rel="stylesheet" href="{{ asset('node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}" />
   <link rel="stylesheet" href="{{ asset('css/style.css')}}" />
@@ -18,9 +18,9 @@
       <div class="row">
         <div class="content-wrapper full-page-wrapper d-flex align-items-center text-center error-page">
           <div class="col-lg-6 mx-auto">
-            <h1 class="display-1 mb-0">404</h1>
-            <h2 class="mb-4">Halaman Tidak Ditemukan!</h2>
-            <p>Kamu keknya ngelindur deh...</p>
+            <h1 class="display-1 mb-0">403</h1>
+            <h2 class="mb-4">No Access!</h2>
+            <p>Keknya kamu gak punya hak akses deh kesini...</p>
             <a class="btn btn-primary mt-5 btn-rounded btn-lg" href="{{ url('/home')}}">Kembali Ke Halaman Awal</a>
           </div>
         </div>

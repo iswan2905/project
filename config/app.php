@@ -179,6 +179,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Laratrust' => Laratrust\LaratrustFacade::class,
+        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
 
     ],
 

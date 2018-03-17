@@ -55,6 +55,20 @@
                       <textarea class="form-control p-input" name="e" rows="5" placeholder="Ketikkan Alamat..."></textarea>
                     </div>
                     <div class="form-group">
+                      <label>Tanggal Transaksi</label>
+                      <input type="text" class="form-control p-input datepicker" name="f">
+                    </div>
+                    <div class="form-group">
+                      <label>Metode Pembayaran</label>
+                      <select class="form-control" name="g">
+						<option value="Cash">Cash</option>
+						<option value="Credit Card">Credit Card</option>
+						<option value="Internet Banking">Internet Banking</option>
+						<option value="Cash on Delivery">Cash on Delivery</option>
+						<option value="Debit Card">Debit Card</option>
+					</select>
+                    </div>
+                    <div class="form-group">
 					<label class="control-lable">Buku</label>
 					<select class="js-example-basic-multiple form-control" name="id_buku[]" multiple="multiple">
 						@foreach($buku as $data)

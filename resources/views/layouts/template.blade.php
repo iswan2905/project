@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="{{ asset('node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}" />
   <link rel="stylesheet" href="{{ asset('node_modules/flag-icon-css/css/flag-icon.min.css')}}" />
   <link rel="stylesheet" href="{{ asset('css/style.css')}}" />
+
+    <link rel="stylesheet" href="{{ asset('/css/jquery-ui.css')}}">
   <link rel="shortcut icon" href="{{ asset('images/icon.png')}}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.min.css')}}">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
@@ -56,7 +59,7 @@
           <div class="user-info">
             <img src="{{ asset('images/logoj.png')}}" alt="">
             <p class="name">Staff ABS</p>
-            <p class="designation">ABS FAmily</p>
+            <p class="designation">ABS Family</p>
             <span class="online"></span>
             <br>
             <a class="btn btn-sm btn-primary" style="margin-left: 10px;margin-right: 10px;" href="{{ route('logout') }}"
@@ -81,12 +84,6 @@
             @endif
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/pelanggan')}}">
-                <img src="{{ asset('images/icons/customer.png')}}" alt="">
-                <span class="menu-title">Pelanggan</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{{ url('/penjualan')}}">
                 <img src="{{ asset('images/icons/money.png')}}" alt="">
                 <span class="menu-title">Penjualan</span>
@@ -107,7 +104,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/Karyawan')}}">
-                <img src="{{ asset('images/icons/atm.png')}}" alt="">
+                <img src="{{ asset('images/icons/019-fingerprint.png')}}" alt="">
                 <span class="menu-title">Karyawan</span>
               </a>
             </li>
@@ -147,6 +144,10 @@
   <script src="{{ asset('js/misc.js')}}"></script>
   <script src="{{ asset('js/chart.js')}}"></script>
   <script src="{{ asset('js/maps.js')}}"></script>
+
+    <script src="{{ asset('/js/jquery.js')}}"></script>
+    <script src="{{ asset('/js/jquery-ui.js')}}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.min.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
@@ -155,6 +156,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
     <script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
+      <script>
+      $( function() {
+        $(".datepicker").datepicker();
+      });
+  </script>
     <script>
       $(document).ready(function() {
     $("#example").DataTable({

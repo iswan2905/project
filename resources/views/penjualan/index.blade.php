@@ -68,13 +68,13 @@
 						  <td>{{$data->buku->judul}}</td>
 						  <td>{{$data->tgl_jual}}</td>
                           <td>
-							<a class="btn btn-warning" href="{{route('penjualan.edit', $data->id)}}">Edit</a>
+							<a class="btn btn-outline-warning" href="{{route('penjualan.edit', $data->id)}}">Edit</a>
 						</td>
 						<td>
 							<form action="{{route('penjualan.destroy', $data->id)}}" method="POST">
 								<input type="hidden" name="_method" value="DELETE">
 								<input type="hidden" name="_token">
-								<input type="submit" value="Delete" class="btn btn-danger">
+								<input type="submit" value="Delete" class="btn btn-outline-danger">
 								{{csrf_field()}}
 							</form>
 						</td>

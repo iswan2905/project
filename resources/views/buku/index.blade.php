@@ -58,6 +58,7 @@
                     <table class="table center-aligned-table" id="example">
                       <thead>
                         <tr class="text-primary">
+                          <th>#</th>
                           <th>Judul</th>
 						  <th>Penulis</th>
 						  <th>Cover</th>
@@ -68,21 +69,23 @@
                         </tr>
                       </thead>
                       <tbody>
+                      	@php $no=1; @endphp
                       	@foreach($buku as $data)
                         <tr class="">
-                          <td>{{$data->judul}}</td>
+                        <td>{{$no++}}</td>
+                        <td>{{$data->judul}}</td>
 						<td>{{$data->penulis}}</td>
 						<td><img src="{{asset('/img/'.$data->cover)}}" width="90" height="120"></td>
 						<td>{{$data->stok}}</td>
-						<td>Rp. {{$data->harga}}</td>
+						<td>Rp. {{number_format($data->harga,2,',','.')}}</td>
                           <td>
-							<a class="btn btn-warning" href="{{route('buku.edit', $data->id)}}">Edit</a>
+							<a class="btn btn-outline-warning" href="{{route('buku.edit', $data->id)}}">Edit</a>
 						</td>
 						<td>
 							<form action="{{route('buku.destroy', $data->id)}}" method="POST">
 								<input type="hidden" name="_method" value="DELETE">
 								<input type="hidden" name="_token">
-								<input type="submit" value="Delete" class="btn btn-danger">
+								<input type="submit" value="Delete" class="btn btn-outline-danger">
 								{{csrf_field()}}
 							</form>
 						</td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Buku;
+use File;
 
 class BukuController extends Controller
 {
@@ -52,13 +53,12 @@ class BukuController extends Controller
             //mengambil extension file
             $extension = $uploaded_cover->getClientOriginalExtension();
             //membuat nama file random berikut extesion
-            $filename=md5(time()).'.'.$extesion;
+            $filename=md5(time()).'.'.$extension;
             //menyimpan cover ke folder public/img
-            $destinationPath = public_path().DIRECTORY_SEPARATOR.'img';
+            $destinationPath = public_path() . DIRECTORY_SEPARATOR.'img';
             $uploaded_cover->move($destinationPath,$filename);
             //mengisi fild cover di book dengan filename yang baru dibuat
             $buku->cover=$filename;
-            $buku=save();
         }
 
         $buku->save();

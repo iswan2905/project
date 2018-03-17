@@ -9,7 +9,7 @@
 		<a href="{{URL::previous() }}">Kembali</a></div>
 		</div>
 		<div class="panel-body">
-			<form action="{{route('karyawan.update', $buku->id)}}" method="POST">
+			<form action="{{route('Karyawan.update', $karyawan->id)}}" method="POST">
 				<input type="hidden" name="_method" value="PUT">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="form-group">

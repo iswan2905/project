@@ -47,12 +47,12 @@ class UsersSeeder extends Seeder
         $memberRole->display_name = "Karyawan";
         $memberRole->save();
 
-        $karyawan = new User();
-        $karyawan->name = "Karyawan";
-        $karyawan->email = 'karyawan@gmail.com';
-        $karyawan->password = bcrypt('rahasia');
-        $karyawan->save();
-        $karyawan->attachRole($karyawanRole);
+        $karyawanRole = new User();
+        $karyawanRole->name = "Karyawan";
+        $karyawanRole->email = 'karyawan@gmail.com';
+        $karyawanRole->password = bcrypt('rahasia');
+        $karyawanRole->save();
+        $karyawanRole->attachRole($karyawanRole);
     }
 }
 

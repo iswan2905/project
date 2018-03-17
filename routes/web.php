@@ -22,8 +22,13 @@ Route::group(['middleware'=>['auth']], function(){
 Route::resource('pelanggan', 'PelangganController');
 Route::resource('penjualan', 'PenjualanController');
 Route::resource('buku', 'BukuController');
+
+Route::group(['middleware'=>'role:admin'],function(){
 Route::resource('detailpenjualan', 'DetailPenjualanController');
 Route::resource('Karyawan', 'KaryawanController');
+});
+
+Route::get('/pdf/{id}', 'PDFController@pdf');
 });
 
 Route::get('/Route', function () {

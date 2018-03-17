@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class DetailPenjualan extends Model
 {
     //
-    protected $fillable = ['nama', 'alamat', 'id_buku', 'jumlah', 'total_harga','buku'];
-    protected $visible = ['nama', 'alamat', 'id_buku', 'jumlah', 'total_harga','buku'];
+    protected $fillable = ['nama', 'alamat', 'tgl_transaksi', 'metode_bayar', 'total_harga','buku'];
+    protected $visible = ['nama', 'alamat', 'tgl_transaksi', 'metode_bayar', 'total_harga','buku'];
 
     protected $casts = [
     	'buku' => 'array'

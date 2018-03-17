@@ -48,12 +48,21 @@ class DetailPenjualanController extends Controller
         $detailpenjualan = new DetailPenjualan;
         $detailpenjualan->nama = $request->d;
         $detailpenjualan->alamat = $request->e;
+        $detailpenjualan->tgl_transaksi = $request->f;
+        $detailpenjualan->metode_bayar = $request->g;
         foreach ($request->id_buku as $index => $value){
             $buku = Buku::find($value);
-            $ket[$index] = $buku->judul;
+            if($buku->stok > 0){
+                $buku->stok = $buku->stok - 1;
+                $buku->save();
+            }else{
+                return redirect()->back();
+            }
+            $ket[$index] = $buku->judul.' - Rp.'.number_format($buku->harga,2,',','.');
+            $total[$index] = $buku->harga;
         };
         $detailpenjualan->buku = $ket;
-        $detailpenjualan->total_harga = $request->c * $buku->harga;
+        $detailpenjualan->total_harga = array_sum($total);
         $detailpenjualan->save();
         return redirect()->route('detailpenjualan.index');
 

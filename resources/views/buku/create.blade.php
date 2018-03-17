@@ -43,7 +43,7 @@
 
 <div class="card-body">
                   <h5 class="card-title mb-4">Tambah Data Buku</h5>
-                  <form action="{{route('buku.store')}}" method="POST">
+                  <form action="{{route('buku.store')}}" method="POST" files="true" enctype="multipart/form-data">
                   	{{csrf_field()}}
                   	<div class="form-group">
                       <label>Judul</label>

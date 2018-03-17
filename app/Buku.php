@@ -16,4 +16,8 @@ class Buku extends Model
     // {
     // 	return $this->hasMany('App\DetailPenjualan');
     // }
+     public function detail_penjualan()
+    	{
+     		return $this->hasMany('App\Pembelian');
+    	 }
 }

@@ -58,36 +58,42 @@
                     <table class="table center-aligned-table" id="example">
                       <thead>
                         <tr class="text-primary">
+                          <th>#</th>
                           <th>Nama Pelanggan</th>
                           <th>Alamat</th>
-                          <th>Judul</th>
-						  <th>Tanggal Transaksi</th>
-						  <th>Edit</th>
+                          <th>Tanggal Transaksi</th>
+                          <th>Buku Yang Dibeli</th>
+                          <th>Total Harga</th>
+                          <th>Metode Pembayaran</th>
+						  <th>Cetak</th>
 						  <th>Delete</th>
                         </tr>
                       </thead>
                       <tbody>
+                      	@php $no=1; @endphp
                       	@foreach($detailpenjualan as $data)
                         <tr class="">
+                        <td>{{$no++}}</td>
                         <td>{{$data->nama}}</td>
                         <td>{{$data->alamat}}</td>
-                        <td>@foreach($data->buku as $key => $value)<i  class="fa fa-arrow-right"></i>{{$value}} <br>@endforeach</td>
-			{{-- 			<td>Rp. {{$data->total_harga}}</td> --}}
-						<td>{{$data->created_at}}</td>
-                          <td>
-							<a class="btn btn-warning" href="{{route('detailpenjualan.edit', $data->id)}}">Edit</a>
-						</td>
+                        <td>{{$data->tgl_transaksi}}</td>
+                        <td>@foreach($data->buku as $key => $value)<i  class="fa fa-hand-o-right"></i>{{$value}} <br>@endforeach</td>
+						<td>Rp. {{number_format($data->total_harga,2,',','.')}}</td>
+						<td>{{$data->metode_bayar}}</td>
+						<td>
+						<a class="btn btn-outline-success mr-2" href="/pdf/{{$data->id}}">Kwitansi</a>
+					</td>
 						<td>
 							<form action="{{route('detailpenjualan.destroy', $data->id)}}" method="POST">
 								<input type="hidden" name="_method" value="DELETE">
 								<input type="hidden" name="_token">
-								<input type="submit" value="Delete" class="btn btn-danger">
+								<input type="submit" value="Delete" class="btn btn-outline-danger">
 								{{csrf_field()}}
 							</form>
 						</td>
 					</tr>
 					@endforeach
-                        </tr>
+                        <hr>
                     </table>
                   </div>
                 </div>

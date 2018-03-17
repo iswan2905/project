@@ -18,6 +18,8 @@ class CreateDetailPenjualansTable extends Migration
             $table->string('nama');
             $table->text('alamat');
             $table->string('buku');
+            $table->string('tgl_transaksi');
+            $table->string('metode_bayar');
             // $table->integer('jumlah');
             $table->integer('total_harga');
             $table->timestamps();

@@ -23,8 +23,5 @@ class PelangganSeeder extends Seeder
 
         //Sample Penjualan
         $penjualan1 = Penjualann::create(['tgl_jual'=>'2017-08-07', 'id_pelanggan'=>$pelanggan1->id, 'id_buku'=>$buku1->id]);
-
-		//Sample Detail Penjualan
-        $detailpenjualan = DetailPenjualan::create(['id_buku'=>$buku1->id, 'jumlah'=>'2', 'total_harga'=>'116000']);
     }
 }

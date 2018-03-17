@@ -27,7 +27,8 @@
                 <div class="card-body">
                   <h5 class="card-title mb-5">Dashboard</h5>
                   <p class="lead">
-                    Anda Berhasil Login!
+                    <h6>Hi! {{Auth::user()->name}}<br></h6>
+                    Anda Berhasil Login!<br>
                     Selamat Datang di Halaman Dashboard Assalaam Book Store.
                   </p>
                 </div>
@@ -44,8 +45,10 @@
                       <thead>
                         <tr class="text-primary">
                           <th>No. </th>
-              <th>Username</th>
-              <th>Email</th>
+                          <th>Nama Karyawan</th>
+                          @role('admin')
+                          <th>Email</th>
+                          @endrole
                         </tr>
                       </thead>
 
@@ -57,8 +60,10 @@
                         @foreach($karyawan as $data)
                         <tr class="">
                           <td>{{$no++}}</td>
-            <td>{{$data->name}}</td>
-            <td>{{$data->email}}</td>
+                          <td>{{$data->name}}</td>
+                          @role('admin')
+                          <td>{{$data->email}}</td>
+                          @endrole
           </tr>
             @endforeach
                       </tbody>

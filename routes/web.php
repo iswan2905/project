@@ -37,3 +37,7 @@ Route::get('/Route', function () {
 Route::get('/register', function(){
 	return view('errors.404');
 });
+
+Route::group(['middleware'=>'cors'], function(){
+	Route::get('/listdata', 'APIController@listdata');
+});
